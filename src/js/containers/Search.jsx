@@ -2,9 +2,9 @@ const React = require('react');
 const { connect } = require('react-redux');
 const { userQuery } = require('../actionCreators');
 const { bindActionCreators } = require('redux');
-const SearchBox = require('../components/SearchBox.jsx');
+const Search = require('../components/Search.jsx');
 
-const SearchBoxContainer = (props) => <SearchBox {...props} />
+const SearchContainer = (props) => <Search {...props} />
 
 const mapStateToProps = ({apiStatus}) => ({...apiStatus});
 
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   userQuery
 }, dispatch);
 
-module.exports = connect(mapStateToProps, mapDispatchToProps)(SearchBoxContainer);
+module.exports = connect(mapStateToProps, mapDispatchToProps)(SearchContainer);

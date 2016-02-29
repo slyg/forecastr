@@ -4,7 +4,7 @@ const Grid = require('react-bootstrap/lib/Grid');
 const Row = require('react-bootstrap/lib/Row');
 const Col = require('react-bootstrap/lib/Col');
 
-const SearchBox = require('./SearchBox.jsx');
+const Search = require('./Search.jsx');
 const Forecast = require('./Forecast.jsx');
 
 module.exports = () =>
@@ -13,7 +13,7 @@ module.exports = () =>
       <Col
         xs={6} xsOffset={3}
         sm={4} smOffset={4}>
-        <SearchBox />
+        <Search />
       </Col>
     </Row>
     <Row>
