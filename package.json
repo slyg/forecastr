@@ -1,19 +1,13 @@
 {
-  "name": "forecastr",
+  "name": "forecastr-app",
   "version": "1.0.0",
   "engine": "node 5.4.0",
   "dependencies": {
     "bootstrap-sass": "^3.3.6",
-    "eventemitter3": "^1.1.1",
-    "exports-loader": "^0.6.3",
-    "imports-loader": "^0.6.5",
     "moment": "^2.11.1",
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.2",
-    "react-chartist": "^0.10.1",
-    "react-cookie": "^0.4.3",
     "react-dom": "^0.14.2",
-    "react-motion": "^0.4.1",
     "react-redux": "^4.0.0",
     "redux": "^3.0.4",
     "redux-thunk": "^1.0.0",
@@ -22,7 +16,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --content-base public/",
-    "build": "webpack -p",
+    "build": "mkdir -p public && webpack",
     "test": "mocha --compilers js:babel-core/register src/js/**/__tests__"
   },
   "devDependencies": {
@@ -30,13 +24,14 @@
     "babel-loader": "^6.0.1",
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-transform-regenerator": "^6.5.2",
-    "babel-plugin-transform-runtime": "^6.1.18",
+    "babel-plugin-transform-runtime": "^6.6.0",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",
     "chai": "^3.4.1",
     "copy-webpack-plugin": "^0.3.3",
     "css-loader": "^0.23.1",
+    "exports-loader": "^0.6.3",
     "file-loader": "^0.8.5",
     "http-server": "^0.8.5",
     "imports-loader": "^0.6.5",
@@ -46,5 +41,17 @@
     "style-loader": "^0.13.0",
     "webpack": "^1.12.11",
     "webpack-dev-server": "^1.12.1"
-  }
+  },
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slyg/forecastr-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slyg/forecastr-app/issues"
+  },
+  "homepage": "https://github.com/slyg/forecastr-app#readme",
+  "description": ""
 }

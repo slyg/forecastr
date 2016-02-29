@@ -1,0 +1,6 @@
+app:
+  build: .
+  dockerfile: Dockerfile
+  volumes:
+    - ./public:/var/www/web/public
+  command: bash -c "npm install && npm run build"
