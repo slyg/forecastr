@@ -1,0 +1,23 @@
+$temperature-hypra-cold: #7BD6FF;
+$temperature-extra-cold: #87E2FF;
+$temperature-very-cold: #98F3FF;
+$temperature-freezing: #ADFFFF;
+$temperature-cold: #CEFFFF;
+$temperature-quite-cold: #deffba;
+$temperature-temperate: #FFFF84;
+$temperature-warm: #FFD639;
+$temperature-hot: #FF6B00;
+$temperature-boiling: #ff3200;
+
+.tc {
+  &.tc-hypra-cold { color: $temperature-hypra-cold; }
+  &.tc-extra-cold { color: $temperature-extra-cold; }
+  &.tc-very-cold { color: $temperature-very-cold; }
+  &.tc-freezing { color: $temperature-freezing; }
+  &.tc-cold { color: $temperature-cold; }
+  &.tc-quite-cold { color: $temperature-quite-cold; }
+  &.tc-temperate { color: $temperature-temperate; }
+  &.tc-warm { color: $temperature-warm; }
+  &.tc-hot { color: $temperature-hot; }
+  &.tc-boiling { color: $temperature-boiling; }
+}

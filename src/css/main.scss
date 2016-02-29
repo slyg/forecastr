@@ -1,0 +1,93 @@
+@import 'bootstrap-compass';
+@import 'bootstrap';
+@import 'src/css/weathericons/weather-icons';
+@import 'src/css/temperature-colors';
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+$base-color: #66afe9;
+$base-bg-color: lighten($base-color, 20%);
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  background-color: $base-bg-color;
+}
+
+.user-input, .forecast {
+  margin-top: $grid-gutter-width;
+}
+
+.search-box {
+  position: relative;
+  top: 250px;
+  text-align: center;
+  transition: top 0.3s;
+  transition-timing-function: ease-out;
+
+  &.on-top {
+    top: 0;
+
+    i {
+      display: none;
+    }
+  }
+
+  i {
+    position: absolute;
+    top: -150px;
+    margin-left: -60px;
+    opacity: 0.2;
+    font-size: 120px;
+  }
+
+}
+
+.forecast {
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.3s;
+
+  &.display {
+    opacity: 1;
+  }
+
+  table {
+    width: 100%;
+    margin-top: $grid-gutter-width;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  thead td {
+    padding: $grid-gutter-width/2;
+  }
+
+  .odd-col {
+    background-color: lighten($base-bg-color, 3%);
+  }
+
+}
+
+.forecast-info {
+  padding: $grid-gutter-width/4;
+
+  .forecast-hour {
+    opacity: 0.4;
+  }
+
+  .forecast-sky-icon {
+    font-size: 35px;
+    padding: 100px 0;
+    vertical-align: middle;
+  }
+
+  .forecast-temperature .tc {
+    border-radius: 10px;
+    font-size: 12px;
+    opacity: 0.8;
+    padding: 2px 5px;
+    background-color: #333;
+  }
+
+}
