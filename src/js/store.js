@@ -1,5 +1,5 @@
 const { compose, createStore, applyMiddleware } = require('redux');
-const thunk = require('redux-thunk');
+const thunk = require('redux-thunk').default;
 const reducers = require('./reducers');
 
 const createStoreWithMiddleware = compose(
