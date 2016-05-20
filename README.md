@@ -31,8 +31,8 @@ $> npm test
 # build static assets in ./public
 $> npm run build
 
-# start local server
-$> npm run dev
+# start local server (localhost:8080)
+$> npm run serve
 ```
 
 #### Using docker

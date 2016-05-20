@@ -11,12 +11,11 @@
     "react-dom": "^0.14.2",
     "react-redux": "^4.4.1",
     "redux": "^3.0.4",
-    "redux-thunk": "^2.0.1",
     "url-pattern": "^1.0.1",
     "whatwg-fetch": "^0.11.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --content-base public/",
+    "serve": "http-server public/",
     "build": "mkdir -p public && webpack",
     "test": "mocha --compilers js:babel-core/register src/js/**/__tests__"
   },
