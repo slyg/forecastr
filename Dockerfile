@@ -1,14 +1,11 @@
-FROM node:5.4.1
+FROM slyg/frontend-build:latest
 
-WORKDIR /var/www/web
-ADD . /var/www/web
+ENV WORKSPACE /var/www/web
 
-# Ruby and compass stuff
-RUN apt-get update \
- && apt-get install -y \
-    ruby \
-    ruby-dev \
- && gem update --system \
- && gem install compass
+WORKDIR $WORKSPACE
 
-RUN npm install
+ADD package.json /tmp/package.json
+RUN cd /tmp && npm install && npm rebuild node-sass
+RUN mkdir -p $WORKSPACE && cp -a /tmp/node_modules $WORKSPACE/
+
+ADD . $WORKSPACE
