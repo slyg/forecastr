@@ -1,5 +1,9 @@
 const moment = require('moment');
-const _ = require('lodash');
+const flow = require('lodash/fp/flow');
+const map = require('lodash/fp/map');
+const filter = require('lodash/fp/filter');
+const reverse = require('lodash/fp/reverse');
+const reduce = require('lodash/fp/reduce');
 
 const selectUsefulData = forecastPer3Hours => {
 
@@ -49,14 +53,16 @@ const accumulatePerDay = (memo, forecastPer3Hours) => {
 
 };
 
+const formatforecast = flow(
+  map(selectUsefulData),
+  filter(isInDay),
+  reverse,
+  reduce(accumulatePerDay, [])
+);
+
 module.exports = ({forecast, apiStatus, location}) => ({
 
-  forecast: _.chain(forecast)
-      .map(selectUsefulData)
-      .filter(isInDay)
-      .reverse()
-      .reduce(accumulatePerDay, [])
-      .value(),
+  forecast: formatforecast(forecast),
 
   location: {
     city: location.city,

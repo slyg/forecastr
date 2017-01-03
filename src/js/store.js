@@ -1,9 +1,11 @@
 const { compose, createStore, applyMiddleware } = require('redux');
-const fetchForecast = require('./middleware/fetchForecast')
+const { createEpicMiddleware } = require('redux-observable');
+const epics = require('./epics');
 const reducers = require('./reducers');
 
-const createStoreWithMiddleware = compose(
-  applyMiddleware(fetchForecast)
-)(createStore);
+const epicsMiddleware = createEpicMiddleware(epics);
 
-module.exports = createStoreWithMiddleware(reducers);
+module.exports = createStore(
+  reducers,
+  applyMiddleware(epicsMiddleware)
+);

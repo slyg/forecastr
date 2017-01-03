@@ -1,14 +1,9 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
-const { debounce } = require('lodash');
 
 const FormControl = require('react-bootstrap/lib/FormControl');
 
 module.exports = React.createClass({
-
-  componentWillMount: function() {
-    this.onChange = debounce(this.onChange, 500);
-  },
 
   getInitialState() {
     return { hasBeenUsed: false };
