@@ -1,10 +1,5 @@
-const {
-  USER_QUERY
-, FORECAST_UPDATE
-// , SERVER_ERROR
-, API_TOKEN
-} = require('../constants');
-
+const { USER_QUERY, API_TOKEN} = require('../constants');
+const { forecastUpdate, serverError } = require('../actionCreators');
 const { ajax } = require('rxjs/observable/dom/ajax');
 const { timer } = require('rxjs/observable/timer');
 
@@ -17,5 +12,7 @@ module.exports = action$ =>
         url: `http://api.openweathermap.org/data/2.5/forecast?q=${query}&appid=${API_TOKEN}`,
         responseType: 'json',
         crossDomain: true
-      }).map(({response}) => ({ type: FORECAST_UPDATE, data: response }))
+      })
+        .map(({response}) => forecastUpdate(response))
+        .catch(e => Observable.of(serverError(e)))
     )

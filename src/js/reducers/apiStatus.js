@@ -1,6 +1,7 @@
-const { USER_QUERY, FORECAST_UPDATE } = require('../constants');
+const { USER_QUERY, FORECAST_UPDATE, SERVER_ERROR } = require('../constants');
 
 const initialState = {
+  hasFailed: false,
   isLoading: true,
   query: ''
 };
@@ -11,11 +12,14 @@ module.exports = function apiStatus(state = initialState, action){
 
     case USER_QUERY: {
       const { query } = action;
-      return { ...state, query, isLoading: true };
+      return { ...state, query, isLoading: true, hasFailed: false };
     }
 
     case FORECAST_UPDATE:
-      return { ...state, isLoading: false };
+      return { ...state, isLoading: false, hasFailed: false };
+
+    case SERVER_ERROR:
+      return {...state, isLoading: false, hasFailed: true}
 
   }
 

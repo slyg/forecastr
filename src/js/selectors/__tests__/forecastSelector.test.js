@@ -81,7 +81,7 @@ describe('the forecast selector', () => {
 
   });
 
-  it('selects only day hours forecast values', () => {
+  it('provides correct keys in returned Array<ForecastPerDay>', () => {
 
     const res = selector({
       forecast: fixture.list,
